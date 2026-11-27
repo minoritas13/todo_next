@@ -1,11 +1,15 @@
+import type { ReactNode } from "react";
+
 type TaskItemProps = {
     title: string;
     status?: "Belum Selesai" | "Selesai";
+    children?: ReactNode; 
 };
 
 export default function TaskItem({
     title,
     status = "Belum Selesai",
+    children,
 }: TaskItemProps) {
     return (
         <div className="flex items-start justify-between gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
@@ -20,6 +24,7 @@ export default function TaskItem({
                     {status}
                 </p>
             </div>
+            {children}
         </div>
     );
 }

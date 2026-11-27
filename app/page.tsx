@@ -1,4 +1,5 @@
 import TaskItem from "@/components/TaskItem";
+import TaskToggle from "@/components/TaskToggle";
 
 const contohTugas = [
   { id: 1, title: "Belajar App Router Next.js" },
@@ -16,7 +17,9 @@ export default function HomePage() {
       <h1 className="mb-6 text-2xl font-bold">Daftar Tugas</h1>
       <div className="flex flex-col gap-3">
         {contohTugas.map((tugas) => (
-          <TaskItem key={tugas.id} title={tugas.title} />
+          <TaskItem key={tugas.id} title={tugas.title}>
+            <TaskToggle />
+          </TaskItem>
         ))}
       </div>
     </main>
